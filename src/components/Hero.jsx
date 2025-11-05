@@ -54,28 +54,28 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA area: premium caption ABOVE the button; no extra scrolling/underline component */}
+          {/* CTA area: BIG premium text WITH subheading above the button; no decorative line */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mt-6 flex flex-col items-center justify-center gap-3"
+            className="mt-10 flex flex-col items-center justify-center"
           >
-            {/* Premium minimal caption */}
-            <motion.p
-              variants={fadeUp}
-              className="text-sm md:text-base font-medium text-black/90"
-            >
-              <span className="inline-block bg-gradient-to-b from-black via-neutral-800 to-black bg-clip-text text-transparent">
-                Book the 20-Minute Strategy Call
-              </span>
-            </motion.p>
+            {/* Big premium heading */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
+              Book 20-Minute Strategy Call
+            </h2>
+            {/* Subheading */}
+            <p className="mt-2 text-sm sm:text-base md:text-lg text-black/70 max-w-2xl mx-auto">
+              See how we automate your front desk and grow your clinic
+            </p>
 
+            {/* Button placed slightly lower for premium spacing */}
             <a
               href="https://cal.com/velodent-ogbkfv/20min"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white text-base md:text-lg font-medium transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
+              className="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white text-base md:text-lg font-medium transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
             >
               Book Now
             </a>
