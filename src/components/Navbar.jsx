@@ -4,15 +4,15 @@ import { Calendar, LineChart } from 'lucide-react';
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur border-b border-black/10 bg-white/70">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Brand (Velodent) with subtle premium hover */}
+      <div className="max-w-7xl mx-auto pl-4 sm:pl-6 lg:pl-10 pr-3 sm:pr-4 lg:pr-6">
+        <div className="flex items-center justify-between h-20">
+          {/* Brand (Velodent) */}
           <div className="flex items-center gap-2">
             <a
               href="#home"
               className="group relative inline-block font-bold tracking-tight text-black transition-transform duration-200"
             >
-              <span className="inline-block transition-transform group-hover:scale-[1.02] group-hover:opacity-95">
+              <span className="inline-block text-lg sm:text-xl transition-transform group-hover:scale-[1.02] group-hover:opacity-95">
                 Velodent
               </span>
               <span
@@ -22,7 +22,7 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Center navigation (no Dashboard here) */}
+          {/* Center navigation */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
             {[
               { href: '#home', label: 'Home' },
@@ -48,23 +48,23 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right actions (keep Dashboard + Book Now) */}
-          <div className="flex items-center gap-3">
+          {/* Right actions (Dashboard + Book Now) */}
+          <div className="flex items-center gap-4 ml-4">
             <a
               href="#dashboard"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/20 bg-white text-black hover:bg-black hover:text-white transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-black/20 bg-white text-black hover:bg-black hover:text-white transition-colors shadow-sm"
             >
-              <LineChart className="w-4 h-4" />
-              <span className="text-sm font-medium">Dashboard</span>
+              <LineChart className="w-5 h-5" />
+              <span className="text-sm md:text-base font-medium">Dashboard</span>
             </a>
             <a
               href="https://cal.com/velodent-ogbkfv/20min"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black text-white transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
             >
-              <Calendar className="w-4 h-4" />
-              <span className="text-sm font-medium">Book Now</span>
+              <Calendar className="w-5 h-5" />
+              <span className="text-sm md:text-base font-medium">Book Now</span>
             </a>
           </div>
         </div>
