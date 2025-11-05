@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur border-b border-black/10 bg-white/70">
       <div className="max-w-7xl mx-auto pl-4 sm:pl-6 lg:pl-10 pr-3 sm:pr-4 lg:pr-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center h-20">
           {/* Brand (Velodent) */}
           <div className="flex items-center gap-2">
             <a
@@ -22,8 +22,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Center navigation */}
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          {/* Center navigation - stretched and evenly distributed */}
+          <nav className="hidden md:flex flex-1 items-center justify-between px-8 text-sm">
             {[
               { href: '#home', label: 'Home' },
               { href: '#about', label: 'About' },
@@ -48,8 +48,8 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Right actions (Dashboard + Book Now) */}
-          <div className="flex items-center gap-4 ml-4">
+          {/* Right actions (Dashboard + Book Now) - pushed to far right */}
+          <div className="ml-auto flex items-center gap-4">
             <a
               href="#dashboard"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-black/20 bg-white text-black hover:bg-black hover:text-white transition-colors shadow-sm"
