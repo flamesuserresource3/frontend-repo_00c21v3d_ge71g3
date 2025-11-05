@@ -6,9 +6,20 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur border-b border-black/10 bg-white/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Brand */}
+          {/* Brand (Velodent) with subtle premium hover */}
           <div className="flex items-center gap-2">
-            <span className="font-semibold tracking-tight">Velodent</span>
+            <a
+              href="#home"
+              className="group relative inline-block font-bold tracking-tight text-black transition-transform duration-200"
+            >
+              <span className="inline-block transition-transform group-hover:scale-[1.02] group-hover:opacity-95">
+                Velodent
+              </span>
+              <span
+                className="pointer-events-none absolute left-0 -bottom-1 h-[1px] w-0 bg-black/70 transition-all duration-200 group-hover:w-full"
+                aria-hidden="true"
+              />
+            </a>
           </div>
 
           {/* Center navigation (no Dashboard here) */}
