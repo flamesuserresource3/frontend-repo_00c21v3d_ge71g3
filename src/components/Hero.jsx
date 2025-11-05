@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center bg-white">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/0UnIIJngGgvQNHiD/scene.splinecode" style={{ width: '100%', height: '100%' }} />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8),rgba(255,255,255,0.95))]"></div>
       </div>
 
