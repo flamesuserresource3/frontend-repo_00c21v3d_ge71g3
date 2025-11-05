@@ -2,17 +2,30 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b border-black/10">
+    <header className="w-full border-b border-black/10 bg-white">
       <div className="mx-auto max-w-6xl h-16 px-4 sm:px-6 flex items-center justify-between">
-        <a href="#home" className="font-semibold tracking-tight">Velodent</a>
+        {/* Brand */}
+        <a href="/" className="text-lg font-semibold tracking-tight">Velodent</a>
+
+        {/* Center nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm">
-          <a href="#home" className="hover:opacity-70 transition-opacity">Home</a>
-          <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
-          <a href="#booking" className="hover:opacity-70 transition-opacity">Book Demo</a>
+          <a href="#home" className="hover:opacity-70 transition">Home</a>
+          <a href="#about" className="hover:opacity-70 transition">About</a>
+          <a href="#services" className="hover:opacity-70 transition">Services</a>
+          <a href="#cases" className="hover:opacity-70 transition">Case Studies</a>
+          <a href="#testimonials" className="hover:opacity-70 transition">Testimonials</a>
+          <a href="#faq" className="hover:opacity-70 transition">FAQ</a>
         </nav>
-        <a href="#booking" className="inline-flex items-center justify-center rounded-md border border-black/10 px-3 py-1.5 text-sm hover:bg-black hover:text-white transition-colors">
-          Get Started
-        </a>
+
+        {/* Actions */}
+        <div className="flex items-center gap-2">
+          <a href="#booking" className="inline-flex items-center justify-center rounded-md bg-black text-white px-3 py-2 text-sm">
+            Book Now
+          </a>
+          <a href="/dashboard" className="inline-flex items-center justify-center rounded-md border border-black/15 px-3 py-2 text-sm hover:bg-black hover:text-white transition-colors">
+            Dashboard
+          </a>
+        </div>
       </div>
     </header>
   );
