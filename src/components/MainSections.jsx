@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, Phone, Calendar, Shield, CreditCard, LineChart, Star, User } from 'lucide-react';
+import { Bot, Phone, Shield, LineChart } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function Card({ icon: Icon, title, desc }) {
@@ -23,37 +23,70 @@ const revealVariants = {
   },
 };
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 export default function MainSections() {
   return (
     <div className="bg-white">
-      {/* About */}
+      {/* About (UPDATED) */}
       <section id="about" className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Automation that feels human</h2>
+          <motion.div
+            variants={revealVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              We automate your front desk and increase revenue
+            </h2>
             <p className="text-black/70 leading-relaxed">
-              Velodent is an AI automation platform built specifically for dental clinics. From answering calls to
-              verifying insurance and managing payments, our AI receptionist handles the full front desk so your team can
-              focus on patient care. We guarantee 2X ROI or we work for free.
+              A premium AI receptionist purpose‑built for dental clinics. It runs your entire front desk with
+              human‑level clarity so your team can focus on care — and your practice grows without extra hiring.
             </p>
-          </div>
+          </motion.div>
+
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl border border-black/10 text-center">
-              <LineChart className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm">Reduce no-shows</p>
-            </div>
-            <div className="p-4 rounded-xl border border-black/10 text-center">
-              <Calendar className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm">Fill empty slots</p>
-            </div>
-            <div className="p-4 rounded-xl border border-black/10 text-center">
-              <Shield className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm">Insurance verified</p>
-            </div>
-            <div className="p-4 rounded-xl border border-black/10 text-center">
-              <CreditCard className="w-6 h-6 mx-auto mb-2" />
-              <p className="text-sm">Payments handled</p>
-            </div>
+            {[{
+              Icon: Bot,
+              title: 'Automate the entire front desk end‑to‑end',
+              desc: 'Calls, scheduling, verification, reminders, and collections — handled.'
+            },{
+              Icon: LineChart,
+              title: 'Increase revenue with no extra hiring',
+              desc: 'Fill schedules and convert more opportunities without adding headcount.'
+            },{
+              Icon: Phone,
+              title: 'Faster solutions, less manual hassle',
+              desc: 'Quick responses and streamlined workflows that keep the day moving.'
+            },{
+              Icon: Shield,
+              title: 'Quick, smart, and compliant communication',
+              desc: 'Clear, on‑brand outreach with privacy and compliance in mind.'
+            }].map(({ Icon, title, desc }, idx) => (
+              <motion.div
+                key={title}
+                className="p-5 rounded-xl border border-black/10 bg-white/90"
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                custom={idx + 1}
+              >
+                <div className="w-9 h-9 rounded-full border border-black flex items-center justify-center mb-3">
+                  <Icon className="w-4 h-4" />
+                </div>
+                <p className="text-sm font-medium leading-snug mb-1">{title}</p>
+                <p className="text-xs text-black/70 leading-relaxed">{desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -71,9 +104,9 @@ export default function MainSections() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card icon={Bot} title="AI Receptionist" desc="Answers calls, books, reschedules, and cancels appointments 24/7." />
             <Card icon={Phone} title="Follow-ups & Reminders" desc="Automated SMS/voice reminders to reduce no-shows and re-activate patients." />
-            <Card icon={Calendar} title="Scheduling Automation" desc="Fills empty slots and balances provider schedules automatically." />
+            <Card icon={LineChart} title="Scheduling Automation" desc="Fills empty slots and balances provider schedules automatically." />
             <Card icon={Shield} title="Insurance Verification" desc="Verifies coverage and benefits before the appointment to speed up the visit." />
-            <Card icon={CreditCard} title="Payment Handling" desc="Collects co-pays, balances, and sends secure payment links." />
+            <Card icon={LineChart} title="Payment Handling" desc="Collects co-pays, balances, and sends secure payment links." />
             <Card icon={LineChart} title="Lead Generation" desc="Converts ad leads with instant outreach and 6-month hygiene recalls." />
           </div>
           <p className="text-sm text-black/60 mt-4">Also calculates treatment schedules like braces tightening and sends automated call reminders.</p>
@@ -120,13 +153,13 @@ export default function MainSections() {
             ].map((t) => (
               <div key={t.name} className="p-6 rounded-xl border border-black/10 bg-white">
                 <div className="flex items-center gap-2 mb-3">
-                  <User className="w-5 h-5" />
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                   <span className="font-medium">{t.name}</span>
                 </div>
                 <p className="text-black/80">“{t.quote}”</p>
                 <div className="flex gap-1 mt-3">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-black text-black" />
+                    <svg key={i} className="w-4 h-4 fill-black text-black" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
                   ))}
                 </div>
               </div>
