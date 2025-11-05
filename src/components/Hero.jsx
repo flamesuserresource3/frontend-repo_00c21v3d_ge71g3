@@ -7,14 +7,9 @@ export default function Hero() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
   };
 
-  const listStagger = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.08 } },
-  };
-
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center bg-white">
-      {/* Plain white background only (no shapes/gradients/images) */}
+      {/* Plain white background only */}
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
         <div className="text-center space-y-6">
           <motion.p
@@ -30,10 +25,19 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight transition-colors hover:underline underline-offset-8 decoration-black/30"
+            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight"
           >
-            Velodent — AI Automation for Dental Clinics
+            Premium AI Automation Engine For Modern Dental Practices
           </motion.h1>
+
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="text-base sm:text-lg text-black/80 max-w-3xl mx-auto"
+          >
+            Velodent streamlines front-desk ops, patient onboarding, and recall systems using safe, compliant AI.
+          </motion.p>
 
           {/* Video (unchanged) */}
           <div className="mt-10 mx-auto max-w-4xl rounded-2xl overflow-hidden border border-black/10 shadow-xl bg-white">
@@ -50,7 +54,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA directly under video (reduced to balanced medium size) */}
+          {/* CTA directly under video (only the button, no extra text) */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
@@ -66,26 +70,6 @@ export default function Hero() {
               Book Now
             </a>
           </motion.div>
-
-          {/* Updated premium supporting lines under the video */}
-          <motion.ul
-            variants={listStagger}
-            initial="hidden"
-            animate="visible"
-            className="mt-2 max-w-2xl mx-auto text-left sm:text-center grid gap-1.5 text-sm sm:text-base text-black/80"
-          >
-            {[
-              '2× ROI Guarantee',
-              'Full front-desk automation',
-              'Appointment scheduling + follow-ups',
-              'Insurance verification and claims assistance',
-              'No-show reduction and patient reactivation',
-            ].map((line, idx) => (
-              <motion.li key={idx} variants={fadeUp} className="leading-relaxed">
-                {line}
-              </motion.li>
-            ))}
-          </motion.ul>
         </div>
       </div>
     </section>
