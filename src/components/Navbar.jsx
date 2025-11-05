@@ -6,18 +6,38 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 backdrop-blur border-b border-black/10 bg-white/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Brand */}
           <div className="flex items-center gap-2">
             <span className="font-semibold tracking-tight">Velodent</span>
           </div>
+
+          {/* Center navigation (no Dashboard here) */}
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#home" className="hover:opacity-70 transition-opacity">Home</a>
-            <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
-            <a href="#services" className="hover:opacity-70 transition-opacity">Services</a>
-            <a href="#dashboard" className="hover:opacity-70 transition-opacity">Dashboard</a>
-            <a href="#case-studies" className="hover:opacity-70 transition-opacity">Case Studies</a>
-            <a href="#testimonials" className="hover:opacity-70 transition-opacity">Testimonials</a>
-            <a href="#faq" className="hover:opacity-70 transition-opacity">FAQ</a>
+            {[
+              { href: '#home', label: 'Home' },
+              { href: '#about', label: 'About' },
+              { href: '#services', label: 'Services' },
+              { href: '#case-studies', label: 'Case Studies' },
+              { href: '#testimonials', label: 'Testimonials' },
+              { href: '#faq', label: 'FAQ' },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="relative group inline-block text-black/80 hover:text-black transition-colors"
+              >
+                <span className="inline-block transition-transform group-hover:-translate-y-0.5">
+                  {item.label}
+                </span>
+                <span
+                  className="pointer-events-none absolute left-0 -bottom-1 h-px w-0 bg-black/60 transition-all duration-200 group-hover:w-full"
+                  aria-hidden="true"
+                />
+              </a>
+            ))}
           </nav>
+
+          {/* Right actions (keep Dashboard + Book Now) */}
           <div className="flex items-center gap-3">
             <a
               href="#dashboard"
@@ -26,7 +46,12 @@ export default function Navbar() {
               <LineChart className="w-4 h-4" />
               <span className="text-sm font-medium">Dashboard</span>
             </a>
-            <a href="https://cal.com/velodent-ogbkfv/20min" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white hover:opacity-90 transition">
+            <a
+              href="https://cal.com/velodent-ogbkfv/20min"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90"
+            >
               <Calendar className="w-4 h-4" />
               <span className="text-sm font-medium">Book Now</span>
             </a>
