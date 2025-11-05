@@ -22,8 +22,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Center navigation - keep exactly as previously positioned */}
-          <nav className="hidden md:flex flex-1 items-center justify-between px-8 text-sm">
+          {/* Center navigation - restore original sizing (no extra horizontal padding) */}
+          <nav className="hidden md:flex flex-1 items-center justify-between text-sm">
             {[
               { href: '#home', label: 'Home' },
               { href: '#about', label: 'About' },
