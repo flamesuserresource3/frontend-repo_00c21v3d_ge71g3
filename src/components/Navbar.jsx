@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, LineChart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   return (
@@ -52,13 +53,13 @@ export default function Navbar() {
 
           {/* Right actions (Dashboard + Book Now) - fully right as a cluster */}
           <div className="ml-auto flex-none flex items-center gap-4">
-            <a
-              href="#dashboard"
+            <Link
+              to="/dashboard"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-black/20 bg-white text-black hover:bg-black hover:text-white transition-colors shadow-sm"
             >
               <LineChart className="w-5 h-5" />
               <span className="text-sm md:text-base font-medium">Dashboard</span>
-            </a>
+            </Link>
             <a
               href="https://cal.com/velodent-ogbkfv/20min"
               target="_blank"

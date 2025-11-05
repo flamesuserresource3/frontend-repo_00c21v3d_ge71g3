@@ -102,43 +102,6 @@ export default function MainSections() {
         </motion.div>
       </section>
 
-      {/* Dashboard Preview */}
-      <section id="dashboard" className="py-16 border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">Dashboard</h3>
-          <div className="grid lg:grid-cols-3 gap-6">
-            <div className="lg:col-span-2 p-6 rounded-xl border border-black/10 bg-white">
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                {[
-                  { label: 'Monthly Bookings', value: '186' },
-                  { label: 'Show Rate', value: '92%' },
-                  { label: 'Revenue Attributed', value: '$84k' },
-                ].map((m) => (
-                  <div key={m.label} className="p-4 rounded-lg border border-black/10">
-                    <p className="text-xs text-black/60">{m.label}</p>
-                    <p className="text-xl font-semibold mt-1">{m.value}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="h-48 rounded-lg border border-black/10 flex items-end gap-3 p-4">
-                {[30,50,40,70,65,80,60,90,75,95,85,100].map((h, idx) => (
-                  <div key={idx} className="flex-1 bg-black/10 rounded" style={{ height: `${h}%` }} />
-                ))}
-              </div>
-            </div>
-            <div className="p-6 rounded-xl border border-black/10 bg-white">
-              <h4 className="font-semibold mb-3">Client Access</h4>
-              <form className="space-y-3">
-                <input type="email" placeholder="Email" className="w-full px-3 py-2 border border-black/20 rounded-md focus:outline-none focus:ring-2 focus:ring-black" />
-                <input type="password" placeholder="Password" className="w-full px-3 py-2 border border-black/20 rounded-md focus:outline-none focus:ring-2 focus:ring-black" />
-                <button type="button" className="w-full py-2 rounded-md bg-black text-white hover:opacity-90">Sign In</button>
-              </form>
-              <p className="text-xs text-black/60 mt-3">Demo only — connect your account for full analytics.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section id="testimonials" className="py-16 border-t border-black/10">
         <motion.div
