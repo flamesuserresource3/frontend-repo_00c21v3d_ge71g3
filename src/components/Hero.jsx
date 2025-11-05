@@ -1,81 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function Hero() {
-  const fadeUp = {
-    hidden: { opacity: 0, y: 8 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-  };
-
+const Hero = () => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center bg-white">
-      {/* Plain white background only */}
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
-        <div className="text-center space-y-6">
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="uppercase tracking-widest text-xs"
-          >
-            Premium AI for Dental Clinics
-          </motion.p>
-
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight"
-          >
-            Premium AI Automation Engine For Modern Dental Practices
-          </motion.h1>
-
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="text-base sm:text-lg text-black/80 max-w-3xl mx-auto"
-          >
-            Velodent streamlines front-desk ops, patient onboarding, and recall systems using safe, compliant AI.
-          </motion.p>
-
-          {/* Video (unchanged) */}
-          <div className="mt-10 mx-auto max-w-4xl rounded-2xl overflow-hidden border border-black/10 shadow-xl bg-white">
-            <div className="aspect-video">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/Nw478YoO3og?si=0Pcoc1145T6JDndl"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            </div>
-          </div>
-
-          {/* CTA area: restore the text block directly above the existing button */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="mt-10 flex flex-col items-center justify-center"
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">Book 20-Minute Strategy Call</h2>
-            <p className="mt-2 text-sm sm:text-base md:text-lg text-black/70 max-w-2xl mx-auto">
-              See how we automate your front desk and grow your clinic
-            </p>
-            <a
-              href="https://cal.com/velodent-ogbkfv/20min"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex items-center justify-center px-6 py-3 rounded-full bg-black text-white text-base md:text-lg font-medium transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
+    <section id="home" className="min-h-[90vh] flex items-center">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 w-full">
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight"
             >
-              Book Now
-            </a>
-          </motion.div>
+              AI Front-Desk for Modern Dental Clinics
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              className="mt-4 text-base sm:text-lg text-black/70 max-w-xl"
+            >
+              Convert more calls, fill your schedule, and automate admin work with a premium, minimalist experience.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className="mt-8 flex items-center gap-3"
+            >
+              <a href="#booking" className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm hover:opacity-90 transition-opacity">
+                Book a Demo
+              </a>
+              <a href="#about" className="inline-flex items-center justify-center rounded-md border border-black/15 px-4 py-2 text-sm hover:bg-black hover:text-white transition-colors">
+                Learn more
+              </a>
+            </motion.div>
+          </div>
+          <div className="aspect-[4/3] rounded-xl border border-black/10 bg-white" />
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

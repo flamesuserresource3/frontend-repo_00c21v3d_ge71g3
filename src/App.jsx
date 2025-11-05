@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import MainSections from './components/MainSections';
-import Booking from './components/Booking';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import MainSections from './components/MainSections.jsx';
+import Booking from './components/Booking.jsx';
 
-export default function App() {
+function App() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />
@@ -16,3 +16,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
