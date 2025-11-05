@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bot, Phone, Shield, LineChart } from 'lucide-react';
+import { Bot, Phone, Shield, LineChart, Calendar, CreditCard } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 function Card({ icon: Icon, title, desc }) {
@@ -23,7 +23,7 @@ const revealVariants = {
   },
 };
 
-const itemVariants = {
+const boxVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: (i = 1) => ({
     opacity: 1,
@@ -35,46 +35,34 @@ const itemVariants = {
 export default function MainSections() {
   return (
     <div className="bg-white">
-      {/* About (UPDATED) */}
-      <section id="about" className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+      {/* About (ONLY THIS SECTION UPDATED) */}
+      <section id="about" className="pt-12 md:pt-14 pb-16 -mt-2 md:-mt-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-start">
           <motion.div
             variants={revealVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
           >
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              We automate your front desk and increase revenue
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-left">
+              Premium AI Front-Desk Automation That Drives Higher Revenue Instantly.
             </h2>
             <p className="text-black/70 leading-relaxed">
-              A premium AI receptionist purpose‑built for dental clinics. It runs your entire front desk with
-              human‑level clarity so your team can focus on care — and your practice grows without extra hiring.
+              Purpose‑built for dental clinics. Run your front desk with human‑level clarity so your team can focus on care.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-4">
-            {[{
-              Icon: Bot,
-              title: 'Automate the entire front desk end‑to‑end',
-              desc: 'Calls, scheduling, verification, reminders, and collections — handled.'
-            },{
-              Icon: LineChart,
-              title: 'Increase revenue with no extra hiring',
-              desc: 'Fill schedules and convert more opportunities without adding headcount.'
-            },{
-              Icon: Phone,
-              title: 'Faster solutions, less manual hassle',
-              desc: 'Quick responses and streamlined workflows that keep the day moving.'
-            },{
-              Icon: Shield,
-              title: 'Quick, smart, and compliant communication',
-              desc: 'Clear, on‑brand outreach with privacy and compliance in mind.'
-            }].map(({ Icon, title, desc }, idx) => (
+            {[
+              { Icon: LineChart, text: 'Reduce no-shows' },
+              { Icon: Calendar, text: 'Fill empty slots' },
+              { Icon: Shield, text: 'Insurance verified' },
+              { Icon: CreditCard, text: 'Payments handled' },
+            ].map(({ Icon, text }, idx) => (
               <motion.div
-                key={title}
+                key={text}
                 className="p-5 rounded-xl border border-black/10 bg-white/90"
-                variants={itemVariants}
+                variants={boxVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
@@ -83,15 +71,14 @@ export default function MainSections() {
                 <div className="w-9 h-9 rounded-full border border-black flex items-center justify-center mb-3">
                   <Icon className="w-4 h-4" />
                 </div>
-                <p className="text-sm font-medium leading-snug mb-1">{title}</p>
-                <p className="text-xs text-black/70 leading-relaxed">{desc}</p>
+                <p className="text-sm font-medium leading-snug">{text}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services (unchanged) */}
       <section id="services" className="py-16 border-t border-black/10">
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -113,7 +100,7 @@ export default function MainSections() {
         </motion.div>
       </section>
 
-      {/* Case Studies */}
+      {/* Case Studies (unchanged) */}
       <section id="case-studies" className="py-16 border-t border-black/10">
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -135,7 +122,7 @@ export default function MainSections() {
         </motion.div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (unchanged) */}
       <section id="testimonials" className="py-16 border-t border-black/10">
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -168,7 +155,7 @@ export default function MainSections() {
         </motion.div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ (unchanged) */}
       <section id="faq" className="py-16 border-t border-black/10">
         <motion.div
           className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -207,7 +194,7 @@ export default function MainSections() {
         </motion.div>
       </section>
 
-      {/* Contact footer */}
+      {/* Contact footer (unchanged) */}
       <footer className="border-t border-black/10 py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-6">
           <div>
