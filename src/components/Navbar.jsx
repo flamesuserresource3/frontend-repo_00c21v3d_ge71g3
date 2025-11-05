@@ -22,30 +22,32 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Center navigation - restore original sizing (no extra horizontal padding) */}
-          <nav className="hidden md:flex flex-1 items-center justify-between text-sm">
-            {[
-              { href: '#home', label: 'Home' },
-              { href: '#about', label: 'About' },
-              { href: '#services', label: 'Services' },
-              { href: '#case-studies', label: 'Case Studies' },
-              { href: '#testimonials', label: 'Testimonials' },
-              { href: '#faq', label: 'FAQ' },
-            ].map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="relative group inline-block text-black/80 hover:text-black transition-colors"
-              >
-                <span className="inline-block transition-transform group-hover:-translate-y-0.5">
-                  {item.label}
-                </span>
-                <span
-                  className="pointer-events-none absolute left-0 -bottom-1 h-px w-0 bg-black/60 transition-all duration-200 group-hover:w-full"
-                  aria-hidden="true"
-                />
-              </a>
-            ))}
+          {/* Center navigation - balanced, equal spacing between items */}
+          <nav className="hidden md:flex flex-1 items-center justify-center text-sm">
+            <div className="flex items-center gap-6 lg:gap-8">
+              {[
+                { href: '#home', label: 'Home' },
+                { href: '#about', label: 'About' },
+                { href: '#services', label: 'Services' },
+                { href: '#case-studies', label: 'Case Studies' },
+                { href: '#testimonials', label: 'Testimonials' },
+                { href: '#faq', label: 'FAQ' },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="relative group inline-block text-black/80 hover:text-black transition-colors"
+                >
+                  <span className="inline-block transition-transform group-hover:-translate-y-0.5">
+                    {item.label}
+                  </span>
+                  <span
+                    className="pointer-events-none absolute left-0 -bottom-1 h-px w-0 bg-black/60 transition-all duration-200 group-hover:w-full"
+                    aria-hidden="true"
+                  />
+                </a>
+              ))}
+            </div>
           </nav>
 
           {/* Right actions (Dashboard + Book Now) - fully right as a cluster */}
