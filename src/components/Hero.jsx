@@ -18,17 +18,8 @@ export default function Hero() {
             <li>Full front desk automation and follow-up management</li>
             <li>Appointment scheduling, insurance verification, payments</li>
           </ul>
-          <div className="flex items-center justify-center gap-4 pt-4">
-            <a
-              href="https://cal.com/velodent-ogbkfv/20min"
-              target="_blank"
-              rel="noreferrer"
-              className="px-6 py-3 rounded-full bg-black text-white hover:opacity-90 transition"
-            >
-              Book Now
-            </a>
-          </div>
 
+          {/* Video (unchanged) */}
           <div className="mt-10 mx-auto max-w-4xl rounded-2xl overflow-hidden border border-black/10 shadow-xl bg-white">
             <div className="aspect-video">
               <iframe
@@ -41,6 +32,19 @@ export default function Hero() {
                 allowFullScreen
               />
             </div>
+          </div>
+
+          {/* CTA directly under video */}
+          <div className="mt-6 flex flex-col items-center justify-center gap-3">
+            <a
+              href="https://cal.com/velodent-ogbkfv/20min"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-black text-white text-lg md:text-xl font-medium transition-transform duration-200 hover:-translate-y-0.5 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black"
+            >
+              Book Now
+            </a>
+            <p className="text-base md:text-lg text-black/80">Book a 20‑min strategy call to see how Velodent can grow your clinic.</p>
           </div>
         </div>
       </div>
