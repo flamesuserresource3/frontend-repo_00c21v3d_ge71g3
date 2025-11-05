@@ -54,23 +54,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA area: BIG premium text WITH subheading above the button; no decorative line */}
+          {/* CTA area: restore the text block directly above the existing button */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             className="mt-10 flex flex-col items-center justify-center"
           >
-            {/* Big premium heading */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-              Book 20-Minute Strategy Call
-            </h2>
-            {/* Subheading */}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">Book 20-Minute Strategy Call</h2>
             <p className="mt-2 text-sm sm:text-base md:text-lg text-black/70 max-w-2xl mx-auto">
               See how we automate your front desk and grow your clinic
             </p>
-
-            {/* Button placed slightly lower for premium spacing */}
             <a
               href="https://cal.com/velodent-ogbkfv/20min"
               target="_blank"
