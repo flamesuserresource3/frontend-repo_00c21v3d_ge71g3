@@ -1,5 +1,6 @@
 import React from 'react';
-import { Bot, Phone, Calendar, Shield, CreditCard, LineChart, CheckCircle, Quote, Star, User } from 'lucide-react';
+import { Bot, Phone, Calendar, Shield, CreditCard, LineChart, Star, User } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 function Card({ icon: Icon, title, desc }) {
   return (
@@ -12,6 +13,15 @@ function Card({ icon: Icon, title, desc }) {
     </div>
   );
 }
+
+const revealVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 export default function MainSections() {
   return (
@@ -50,7 +60,13 @@ export default function MainSections() {
 
       {/* Services */}
       <section id="services" className="py-16 border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">Services</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card icon={Bot} title="AI Receptionist" desc="Answers calls, books, reschedules, and cancels appointments 24/7." />
@@ -61,12 +77,18 @@ export default function MainSections() {
             <Card icon={LineChart} title="Lead Generation" desc="Converts ad leads with instant outreach and 6-month hygiene recalls." />
           </div>
           <p className="text-sm text-black/60 mt-4">Also calculates treatment schedules like braces tightening and sends automated call reminders.</p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Case Studies */}
       <section id="case-studies" className="py-16 border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">Case Studies</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[1,2,3].map((i) => (
@@ -77,7 +99,7 @@ export default function MainSections() {
               </a>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Dashboard Preview */}
@@ -119,7 +141,13 @@ export default function MainSections() {
 
       {/* Testimonials */}
       <section id="testimonials" className="py-16 border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">What clinics say</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -141,12 +169,18 @@ export default function MainSections() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* FAQ */}
       <section id="faq" className="py-16 border-t border-black/10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+          variants={revealVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-8">FAQ</h3>
           <div className="space-y-4">
             {[
@@ -174,7 +208,7 @@ export default function MainSections() {
               Book Now
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact footer */}
