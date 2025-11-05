@@ -54,13 +54,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA directly under video (only the button, no extra text) */}
+          {/* CTA area: premium caption ABOVE the button; no extra scrolling/underline component */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mt-6 flex flex-col items-center justify-center gap-4"
+            className="mt-6 flex flex-col items-center justify-center gap-3"
           >
+            {/* Premium minimal caption */}
+            <motion.p
+              variants={fadeUp}
+              className="text-sm md:text-base font-medium text-black/90"
+            >
+              <span className="inline-block bg-gradient-to-b from-black via-neutral-800 to-black bg-clip-text text-transparent">
+                Book the 20-Minute Strategy Call
+              </span>
+            </motion.p>
+
             <a
               href="https://cal.com/velodent-ogbkfv/20min"
               target="_blank"
